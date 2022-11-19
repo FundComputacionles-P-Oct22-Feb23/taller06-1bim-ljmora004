@@ -1,0 +1,43 @@
+Inicio
+nombre, x(10)[{a-z}, {A-Z}, {BS}]
+posicion, x(10)[{a-z}, {A-Z}, {BS}]
+edad, i[0,n]
+totalEdad, i[0,n]
+totalEdad <-- 0
+estatura, d[0,n]
+totalEstatura, d[0,n]
+totalEstatura <-- 0
+promedioEdad, i[0,n]
+promedioEstatura, d[0,n] 
+bandera, l <-- true
+opcion, x(1)[{a-z}]
+mensaje, x(500)[{a-z}, {A-Z}, {BS}]
+mensaje <-- ""
+contador <-- 1
+
+Mientras bandera == true entonces
+	<< "Ingrese el nombre del jugador: "
+	>> nombre
+	<< "Ingrese la posición en el campo de juego: "
+	>> posicion
+	<< "Ingrese la edad del jugador: "
+	>> edad
+	<< "Ingrese la estatura del jugador: "
+	>> estatura
+	totalEdad <-- totalEdad + edad
+	totalEstatura <-- totalEstatura + estatura
+	mensaje <-- mensaje + contador + ". " + nombre + " -" + posicion + "-, edad " 
+	+ edad + ", estatura " + estatura + "\n"
+	contador <-- contador + 1
+	<< "Si desea terminar con el programa presrione s, de lo contrario n."
+	>> opcion
+	Si opcion == "s" entonces
+		bandera <-- false
+	Fin Si
+Fin Mientras
+
+promedioEdad <-- totalEdad/contador
+promedioEstatura <-- totalEstatura/contador
+<< "Listado de Jugadores\n" + mensaje + "Promedio de edades: " + promedioEdad + "\n" + 
+"Promedio de estaturas: " + promedioEstatura
+Fin

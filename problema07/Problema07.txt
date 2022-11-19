@@ -1,0 +1,15 @@
+Inicio
+numero, x(100)[{-n,n}]
+numero <-- ""
+contador, i[0,n]
+contador <-- 1
+Mientras contador <= 9 entonces
+   Si contador MOD 2 == 0 entonces 
+      numero <-- numero + contador + "-1" + "/"
+   De lo contrario
+      numero <-- numero + contador + "+1" + "/"
+   Fin Si
+   contador <-- contador + 1
+Fin Mientras
+<< "-1/" + numero + "10"
+Fin

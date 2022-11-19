@@ -1,0 +1,11 @@
+Inicio
+contador, i[0,n]
+numero, i[0,n]
+numero <-- 10
+contador <-- 1
+Mientras contador <= 6 entonces
+	<< contador + "/" + numero
+	contador <-- contador + 1
+	numero <-- numero + 1
+Fin Mientras
+Fin

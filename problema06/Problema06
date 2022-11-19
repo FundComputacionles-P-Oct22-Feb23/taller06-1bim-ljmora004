@@ -1,0 +1,34 @@
+Inicio
+nombre, x(10)[{a-z}, {A-Z}, {BS}]
+costo, d[0,n]
+tipo, i[0,n]
+descuento, d[0,n]
+costoFinal, d[0,n]
+contador, i[0,n]
+contador <-- 1
+mensaje, x(300)[{a-z}, {A-Z}, {BS}]
+mensaje <-- ""
+
+Mientras contador <= 7 entonces
+	<< "Ingrese su nombre: "
+	>> nombre
+	<< "Ingrese el costo de la computadora: "
+	>> costo
+	<< "Ingrese que tipo de cliente es: "
+	>> tipo
+	Si tipo == 1 entonces
+		descuento <-- 10
+	De lo contrario
+		Si tipo == 2 entonces
+			descuento <-- 20
+		De lo contrario
+			descuento <-- 0
+		Fin Si
+	Fin Si
+	descuento <-- (costo * descuento)/100
+	costoFinal <-- costo - descuento
+	mensaje <-- mensaje + "Cliente tipo " + tipo + ", compra computadora con precio $" + costoFinal + "\n"
+	contador <-- contador + 1
+Fin Mientras
+<< mensaje
+Fin	  					

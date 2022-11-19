@@ -1,0 +1,19 @@
+Inicio
+nombre, x(10)[{a-z}, {A-Z}, {BS}]
+diasTrabajados, i[0,n]
+costoDia, d[0,n]
+valorPagar, d[0,n]
+contador, i[0,n]
+contador <-- 1
+Mientras contador <= 5 entonces
+	<< "Ingrese el nombre del empleado: "
+	>> nombre
+	<< "Ingrese los días trabajados: "
+	>> diasTrabajados
+	<< "Ingrese el costo por día: "
+	>> costoDia
+	valorPagar <-- costoDia * diasTrabajados
+	<< nombre + "\t" + diasTrabajados + "\t" + costoDia + "\t" + valorPagar
+	contador <-- contador + 1
+Fin Mientras
+Fin
